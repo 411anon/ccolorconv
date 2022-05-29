@@ -135,6 +135,12 @@ void convertHSVtoRGB(const float h, const float s, const float v, unsigned char 
         *g = (x * 255.0) + 0.5;
         *b = (y * 255.0) + 0.5;
     }
+    else {
+        /* 6: R = v, G = a, B = c */
+        *r = (v * 255.0) + 0.5;
+        *g = (x * 255.0) + 0.5;
+        *b = (z * 255.0) + 0.5;
+    }
 }
 
 void convertRGBtoHSV(const unsigned char r, const unsigned char g, const unsigned char b, float * h, float * s, float * v)
